@@ -55,8 +55,8 @@ namespace Testing
         public void TestDecimalConvert2()
         {
             string value = "wafwa21f/21p[]";
-            bool isNotDecimal = value is decimal;
-            Assert.IsFalse(isNotDecimal);
+            bool result = value is decimal;
+            Assert.IsFalse(result);
         }
     }
 }
