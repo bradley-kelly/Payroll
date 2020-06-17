@@ -8,28 +8,28 @@ namespace Payroll
     {
         static void Main(string[] args)
         {
-            List<Employee> employee = new List<Employee>();
-            string choice = "l";
-            while (choice != "4")
+            List<Employee> list = new List<Employee>();
+            while (true)
             {
                 string choices = Menu();
                 Console.WriteLine(choices);
-                choice = Console.ReadLine();
+                string choice = Console.ReadLine();
                 Console.WriteLine("");
                 switch (choice)
                 {
                     case "1":
                         Employee salary = CreateSalaried();
-                        employee.Add(salary);
+                        list.Add(salary);
                         break;
                     case "2":
                         Employee hourly = CreateHourly();
-                        employee.Add(hourly);
+                        list.Add(hourly);
                         break;
                     case "3":
-                        Console.WriteLine(Report.RunReport(employee));
+                        Console.WriteLine(Report.RunReport(list));
                         break;
                     case "4":
+                        Environment.Exit(1);
                         break;
                     default:
                         Console.WriteLine("Invalid Choice.");
